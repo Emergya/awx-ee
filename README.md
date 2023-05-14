@@ -1,8 +1,6 @@
-# thedatabaseme AWX EE
+# Emergya AWX EE
 
 This repository contains building instructions for a self-build AWX execution environment.
-To find detailed instructions and information about why to use your own build EE might
-be a good idea, you can find a blog article of me [here](https://thedatabaseme.de/2022/09/09/self-build-awx-execution-environment/).
 
 # Build instructions
 
@@ -20,7 +18,7 @@ Clone this repository to a location of your choice and trigger the `ansible-buil
 command to build yourself a container image.
 
 ```
-ansible-builder build --tag thedatabaseme/awx-ee:0.0.1 --container-runtime docker -f execution-environment.yml
+ansible-builder build --tag emergya/awx-ee:0.0.1 --container-runtime docker -f execution-environment.yml
 ```
 
 If you run podman as your container runtime on your system, you can leave out the
@@ -32,7 +30,7 @@ After building, you may want to test your locally build image. You can do so by 
 a container and shelling into it:
 
 ```
-docker run -it --rm thedatabaseme/awx-ee /bin/bash
+docker run -it --rm emergya/awx-ee /bin/bash
 ```
 
 You can check for the installed collections and versions then:
@@ -64,7 +62,6 @@ redhatinsights.insights
 ```
 
 # Disclaimer
-
 
 Most of code I (re)used from the official AWX EE project [here](https://github.com/ansible/awx-ee). So shoutout to them as well.
 
